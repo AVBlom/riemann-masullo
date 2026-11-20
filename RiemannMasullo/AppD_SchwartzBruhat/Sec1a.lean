@@ -69,10 +69,14 @@ the complex conjugate of a character. -/
 def lcaFourier (μ : Measure G) (f : G → ℂ) (χ : PontryaginDual G) : ℂ :=
   ∫ x, f x * star (χ x : ℂ) ∂μ
 
+-- Retain the existing signature, including the unused integrability hypothesis.
+set_option linter.unusedSectionVars false in
+set_option linter.unusedVariables false in
 /-- Paper: (D.1.1.4), p. 746. At the trivial character the transform is the integral
 of the original function. -/
 theorem lcaFourier_one (f : G → ℂ) (hf : Integrable f μ) :
-    lcaFourier μ f 1 = ∫ x, f x ∂μ := by sorry
+    lcaFourier μ f 1 = ∫ x, f x ∂μ := by
+  simp [lcaFourier, PontryaginDual.one_apply]
 
 /-- Paper: (D.1.1.5), p. 746. Multiplicative convolution integrates the product with
 the left translate of the second function. -/
