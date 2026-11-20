@@ -152,8 +152,8 @@ theorem regulator_cocompact : CompactSpace (logSpace F ⧸ (Units.logEmbedding F
   sorry
 
 /-- Paper: Lemma A.2.3.4(2), p. 548. The regulator kernel is exactly the torsion subgroup. -/
-theorem regulator_kernel : (Units.logEmbedding F).ker = (Units.torsion F).toAddSubgroup := by
-  sorry
+theorem regulator_kernel : (Units.logEmbedding F).ker = (Units.torsion F).toAddSubgroup :=
+  logEmbedding_ker
 
 /-- Paper: Lemma A.2.3.4(2), p. 548. The torsion units are the roots of unity of
 order dividing the number of torsion units. -/
