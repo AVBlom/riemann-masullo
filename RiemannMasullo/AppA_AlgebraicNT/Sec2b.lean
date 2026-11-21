@@ -190,7 +190,7 @@ theorem regulator_torsion_cyclic : IsCyclic (Units.torsion F) := by
 
 /-- Paper: Lemma A.2.3.4(3), p. 548. The unit group is finitely generated. -/
 theorem regulator_units_finitelyGenerated : Group.FG (𝓞 F)ˣ := by
-  sorry
+  exact Group.fg_iff_monoid_fg.mpr inferInstance
 
 /-- Paper: Lemma A.2.3.4(3), p. 548. The units modulo torsion have an integral basis
 of cardinality the number of infinite places minus one. -/
