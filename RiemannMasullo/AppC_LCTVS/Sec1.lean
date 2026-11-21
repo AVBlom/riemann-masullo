@@ -909,7 +909,15 @@ structure IsInjectiveLCLimit (j : ∀ k, X k →L[ℂ] X (k+1)) (i : ∀ k, X k 
 the original locally convex space as its limit. -/
 theorem isInjectiveLCLimit_const [PolynormableSpace ℂ E] :
     IsInjectiveLCLimit (X := fun _ ↦ E) (fun _ ↦ ContinuousLinearMap.id ℂ E)
-      (fun _ ↦ ContinuousLinearMap.id ℂ E) := by sorry
+      (fun _ ↦ ContinuousLinearMap.id ℂ E) := by
+  refine ⟨fun _ ↦ Function.injective_id, fun _ ↦ rfl, fun x ↦ ⟨0, x, rfl⟩, ?_⟩
+  change tE = (SeminormFamily.moduleFilterBasis
+    (Subtype.val : {p : Seminorm ℂ E // ∀ _ : ℕ, Continuous p} → Seminorm ℂ E)).topology
+  have h : (fun p : Seminorm ℂ E ↦ ∀ _ : ℕ, Continuous p) =
+      (fun p : Seminorm ℂ E ↦ Continuous p) := by
+    simp only [forall_const]
+  rw [h]
+  exact (PolynormableSpace.withSeminorms ℂ E).withSeminorms_eq
 
 /-- Paper: Remark C.1.3.3, p. 660. A strict countable limit of complete Hausdorff
 locally convex spaces is complete. If the stages are Fréchet and each inclusion
