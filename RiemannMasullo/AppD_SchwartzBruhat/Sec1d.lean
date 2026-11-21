@@ -293,7 +293,8 @@ def latticeSchwartzMonomial {r : ℕ} (γ : Fin r → ℕ)
 /-- Paper: (D.1.10.12), p. 786. The zero weight leaves the sequence unchanged.
 Deviation: Sanity check on the weight. -/
 theorem latticeSchwartzMonomial_zero {r : ℕ} (f : RapidDecaySequence r) (a : Fin r → ℤ) :
-    latticeSchwartzMonomial 0 f a = f a := by sorry
+    latticeSchwartzMonomial 0 f a = f a := by
+  simp [latticeSchwartzMonomial]
 
 /-- Paper: Example D.1.10.5, p. 786. The weighted sup norms generate the
 rapidly decreasing sequence topology on the integer lattice. -/
