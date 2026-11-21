@@ -743,7 +743,8 @@ def tensorDualOperator : E ⊗[ℂ] F →ₗ[ℂ] StrongDual ℂ E →ₗ[ℂ] F
 /-- Paper: (C.2.3.6), p. 677. A pure tensor sends a functional to its value at the
 first factor times the second factor. -/
 theorem tensorDualOperator_tmul (x : E) (y : F) (φ : StrongDual ℂ E) :
-    tensorDualOperator (x ⊗ₜ[ℂ] y) φ = φ x • y := by sorry
+    tensorDualOperator (x ⊗ₜ[ℂ] y) φ = φ x • y := by
+  simp [tensorDualOperator, dualTensorHom_apply]
 
 include hE sE hF sF in
 /-- Paper: Remark C.2.3.2, p. 677. The canonical operator representation is injective. -/
