@@ -141,7 +141,7 @@ def bruhatFirstOrder (a : LCATopologicalLie G) :
 gives the orbit derivative. -/
 theorem bruhatFirstOrder_apply (a : LCATopologicalLie G)
     (f : bruhatSmoothSubmodule (G := G)) (x : G) :
-    (bruhatFirstOrder a f : G → ℂ) x = bruhatDirectionalDeriv a f x := by sorry
+    (bruhatFirstOrder a f : G → ℂ) x = bruhatDirectionalDeriv a f x := rfl
 
 /-- Paper: Lemma D.1.6.7(1), p. 767. The directional derivative commutes
 with left translations. -/
