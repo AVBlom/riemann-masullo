@@ -936,8 +936,8 @@ def sIdeleRestriction (c : unramifiedOutside F S) : QuasiCharacter (SIdeleQuotie
 /-- Paper: Equation (3.1.2.9), p. 121. On an S-idele representative, the restriction
 evaluates the original character on the class of the inserted idele. -/
 theorem sIdeleRestriction_mk (c : unramifiedOutside F S) (g : (SAdeleRing F S)ˣ) :
-    sIdeleRestriction F S c (QuotientGroup.mk g) = c.val (QuotientGroup.mk (sIdeleInsertion F S g)) := by
-  sorry
+    sIdeleRestriction F S c (QuotientGroup.mk g) = c.val (QuotientGroup.mk (sIdeleInsertion F S g)) :=
+  rfl
 
 /-- Paper: Lemma 3.1.2.2, p. 121. Every quasi-character of J_{F,S} extends to an
 idele class character unramified outside S. -/
