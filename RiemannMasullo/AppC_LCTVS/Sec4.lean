@@ -203,7 +203,7 @@ integral of the functional applied to the integrand. -/
 theorem pettisWeakIntegral_apply (μ : PettisMeasure X) (f : X → E)
     (hf : PettisWeaklyIntegrable μ f) (φ : StrongDual ℂ E) :
     (show Module.Dual ℂ (StrongDual ℂ E) from pettisWeakIntegral μ f hf) φ =
-      μ.scalarIntegral (fun x ↦ φ (f x)) := by sorry
+      μ.scalarIntegral (fun x ↦ φ (f x)) := rfl
 
 /-- Paper: Definition C.4.2.1(3), p. 710. A weakly integrable function has
 Pettis integral `a` if evaluation at `a` represents its weak integral. -/
