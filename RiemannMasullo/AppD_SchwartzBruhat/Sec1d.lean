@@ -413,7 +413,11 @@ Deviation: Sanity check on the fixed subspace used for S(k,G). -/
 theorem mem_schwartzBruhatInvariantSubmodule_iff
     (k : Subgroup G) (f : SchwartzBruhat G) :
     f ∈ schwartzBruhatInvariantSubmodule k ↔
-      ∀ (x : G) (u : k), f (x * u.val) = f x := by sorry
+      ∀ (x : G) (u : k), f (x * u.val) = f x := by
+  simp only [schwartzBruhatInvariantSubmodule, Submodule.mem_iInf]
+  refine forall_congr' fun x ↦ forall_congr' fun u ↦ ?_
+  rw [LinearMap.mem_ker]
+  exact sub_eq_zero
 
 /-- Paper: (D.1.10.15), p. 789. Apply the compact-direction derivatives and the
 derivatives along the norm section, then multiply by a weight in the absolute log norm.
