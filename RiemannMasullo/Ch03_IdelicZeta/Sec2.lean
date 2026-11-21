@@ -361,7 +361,8 @@ def ideleNormBand (F : Type*) [Field F] [NumberField F] (a b : ℝ) : Set 𝕀[F
 /-- Paper: §3.2.2, p. 124. The identity lies in a closed norm band precisely
 when the band contains one. -/
 theorem one_mem_ideleNormBand (a b : ℝ) :
-    (1 : 𝕀[F]) ∈ ideleNormBand F a b ↔ a ≤ 1 ∧ 1 ≤ b := by sorry
+    (1 : 𝕀[F]) ∈ ideleNormBand F a b ↔ a ≤ 1 ∧ 1 ≤ b := by
+  simp [ideleNormBand]
 
 /-- Paper: §3.2.2, p. 124. The surjective idele class norm takes values
 other than one, so its abscissa is defined. -/
