@@ -201,7 +201,8 @@ theorem isOpen_prod_sequence (k : ℕ) (hU : IsOpen (U k)) (hV : IsOpen (V k)) :
 
 /-- Paper: Lemma A.5.2.5, p. 570. The product of two symmetric members is symmetric. -/
 theorem inv_eq_prod_sequence (k : ℕ) (hU : (U k)⁻¹ = U k) (hV : (V k)⁻¹ = V k) :
-    (U k ×ˢ V k)⁻¹ = U k ×ˢ V k := by sorry
+    (U k ×ˢ V k)⁻¹ = U k ×ˢ V k := by
+  rw [Set.inv_prod, hU, hV]
 
 end Products
 
