@@ -69,7 +69,7 @@ def projectiveTensorToOperators :
 /-- Paper: (C.3.1.1), p. 693. On elementary tensors this map evaluates the functional
 and scales the target vector. -/
 theorem projectiveTensorToOperators_tmul (φ : StrongDual ℂ E) (y : F) (x : E) :
-    projectiveTensorToOperators (φ ⊗ₜ[ℂ] y) x = φ x • y := by sorry
+    projectiveTensorToOperators (φ ⊗ₜ[ℂ] y) x = φ x • y := rfl
 
 /-- Paper: Remark C.3.1.1, p. 693. For complete spaces, with barrelled source
 and complete nuclear strong dual, the completed projective tensor is linearly
