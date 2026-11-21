@@ -528,7 +528,9 @@ theorem rapidDecaySequenceBound_singleton_zero (j : ℕ) (c : ℂ) :
 /-- Paper: Remark D.1.3.6, p. 752. The zero lattice sequence has finite weighted
 absolute sums of all orders. -/
 theorem rapidDecaySequenceSubmodule_zero_mem :
-    ∀ j, rapidDecaySequenceBound j (0 : (Fin r → ℤ) → ℂ) < ⊤ := by sorry
+    ∀ j, rapidDecaySequenceBound j (0 : (Fin r → ℤ) → ℂ) < ⊤ := by
+  intro j
+  simp [rapidDecaySequenceBound]
 
 /-- Paper: Remark D.1.3.6, p. 752. Rapidly decreasing lattice sequences are closed
 under addition. -/
