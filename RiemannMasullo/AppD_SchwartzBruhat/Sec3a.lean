@@ -306,7 +306,9 @@ def modulationWeight (a : ℝ) : (G → ℂ) →ₗ[ℂ] (G → ℂ) :=
 
 /-- Paper: Definition D.3.3.1, p. 804. Weighting at exponent zero is
 the identity. -/
-theorem modulationWeight_zero (f : G → ℂ) : modulationWeight m 0 f = f := by sorry
+theorem modulationWeight_zero (f : G → ℂ) : modulationWeight m 0 f = f := by
+  ext g
+  simp [modulationWeight]
 
 /-- Paper: Definition D.3.3.1, p. 804. All real twists with exponents in I
 must lie in the Schwartz–Bruhat submodule.
