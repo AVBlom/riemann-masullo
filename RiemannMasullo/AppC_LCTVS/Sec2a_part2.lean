@@ -1202,7 +1202,8 @@ variable (f : E →L[ℂ] G) (g : F →L[ℂ] H) (hf : IsQuotientMap f) (hg : Is
 /-- Paper: Proposition C.2.3.7, p. 679. The projective tensor map sends a pure tensor
 to the tensor of the two images. -/
 theorem projectiveTensorMap_tmul (x : E) (y : F) :
-    projectiveTensorMap f.toLinearMap g.toLinearMap (x ⊗ₜ[ℂ] y) = f x ⊗ₜ[ℂ] g y := by sorry
+    projectiveTensorMap f.toLinearMap g.toLinearMap (x ⊗ₜ[ℂ] y) = f x ⊗ₜ[ℂ] g y :=
+  TensorProduct.map_tmul _ _ x y
 
 /-- Paper: §C.2.3.2, p. 679. Tensoring continuous linear maps gives a continuous
 projective tensor map, hence a map of additive completions. -/
