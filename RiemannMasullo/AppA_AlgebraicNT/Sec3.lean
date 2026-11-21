@@ -335,7 +335,15 @@ local instance : BorelSpace ℚ_[p] := ⟨rfl⟩
 /-- Paper: Example A.3.1.6, p. 557. Multiplying by the power of p that clears
 the negative valuation places the result in the p-adic integer ring. -/
 theorem padicStandardCharacter_integral (x : ℚ_[p]) :
-    ‖(p : ℚ_[p]) ^ (-x.valuation).toNat * x‖ ≤ 1 := by sorry
+    ‖(p : ℚ_[p]) ^ (-x.valuation).toNat * x‖ ≤ 1 := by
+  rcases eq_or_ne x 0 with rfl | hx
+  · simp
+  rw [norm_mul, Padic.norm_p_pow, Padic.norm_eq_zpow_neg_valuation hx, ← zpow_add₀]
+  · apply zpow_le_one_of_nonpos₀
+    · exact_mod_cast (Fact.out : p.Prime).one_lt.le
+    · have := Int.self_le_toNat (-x.valuation)
+      omega
+  · exact_mod_cast (Fact.out : p.Prime).ne_zero
 
 /-- Paper: Example A.3.1.6, p. 557. The standard character exponentiates
 the rational representative of the coset modulo the p-adic integers.
