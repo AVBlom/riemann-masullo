@@ -381,7 +381,9 @@ theorem mem_bruhatContDiffSubmodule_iff (p : ℕ) (f : G → ℂ) :
 /-- Paper: Definition D.1.5.3(1), p. 762. Membership in the smooth submodule
 means Bruhat differentiability at every finite order. -/
 theorem mem_bruhatSmoothSubmodule_iff (f : G → ℂ) :
-    f ∈ bruhatSmoothSubmodule ↔ IsBruhatSmooth f := by sorry
+    f ∈ bruhatSmoothSubmodule ↔ IsBruhatSmooth f := by
+  simp only [bruhatSmoothSubmodule, Submodule.mem_iInf]
+  rfl
 
 omit hTop hT2 hLC
 
