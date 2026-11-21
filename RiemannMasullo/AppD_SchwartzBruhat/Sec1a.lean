@@ -878,7 +878,8 @@ theorem mem_rapidDecaySequenceSubmodule_of_finiteSupport (s : (Fin r → ℤ) �
 
 /-- Paper: (D.1.3.17), p. 752. Each weighted absolute sum vanishes on the zero sequence. -/
 theorem rapidDecaySequenceSeminorm_map_zero (j : ℕ) :
-    (rapidDecaySequenceBound j (0 : rapidDecaySequenceSubmodule r).val).toReal = 0 := by sorry
+    (rapidDecaySequenceBound j (0 : rapidDecaySequenceSubmodule r).val).toReal = 0 := by
+  simp [rapidDecaySequenceBound]
 
 /-- Paper: (D.1.3.17), p. 752. Each real-valued weighted absolute sum is subadditive
 on rapidly decreasing lattice sequences. -/
