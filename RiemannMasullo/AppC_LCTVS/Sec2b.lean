@@ -643,7 +643,8 @@ abbrev FinestLocallyConvex := WithGeneratingSeminorms E (id : Seminorm ℂ E →
 /-- Paper: Proposition C.2.5.1(1), p. 691. All seminorms generate the finest locally
 convex topology. -/
 theorem finestLocallyConvex_withSeminorms :
-    WithSeminorms (E := FinestLocallyConvex E) (id : Seminorm ℂ E → Seminorm ℂ E) := by sorry
+    WithSeminorms (E := FinestLocallyConvex E) (id : Seminorm ℂ E → Seminorm ℂ E) :=
+  withGeneratingSeminorms_spec E _
 
 /-- Paper: Proposition C.2.5.1(1), p. 691. The finest locally convex topology is
 Hausdorff.
