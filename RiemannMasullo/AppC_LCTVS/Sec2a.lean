@@ -202,7 +202,8 @@ The three choices in the definition are finite, precompact, and von Neumann boun
 theorem uniformConvergenceCLM_zero_basis (hne : S.Nonempty) (hdir : DirectedOn (· ⊆ ·) S) :
     (𝓝 (0 : E →Lᵤ[ℂ, S] F)).HasBasis
       (fun a : Set E × Set F ↦ a.1 ∈ S ∧ a.2 ∈ 𝓝 0)
-      (fun a ↦ {f | MapsTo f a.1 a.2}) := by sorry
+      (fun a ↦ {f | MapsTo f a.1 a.2}) :=
+  UniformConvergenceCLM.hasBasis_nhds_zero (RingHom.id ℂ) F S hne hdir
 
 /-- Paper: Definition C.2.1.5(2), p. 671. The γ-topology on continuous linear maps tests
 uniform convergence on all subsets with compact closure in the completion of the source.
